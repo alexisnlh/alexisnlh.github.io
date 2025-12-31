@@ -47,9 +47,18 @@
             }
             .cv-container {
                 box-shadow: none !important;
+                max-height: 297mm !important;
+                overflow: hidden !important;
             }
             .no-print {
                 display: none !important;
+            }
+            .profile-name {
+                background: none !important;
+                -webkit-background-clip: unset !important;
+                -webkit-text-fill-color: #f0f0f2 !important;
+                background-clip: unset !important;
+                color: #f0f0f2 !important;
             }
         }
 
@@ -60,11 +69,13 @@
 
         .cv-container {
             max-width: 210mm;
-            min-height: 297mm;
+            height: 297mm;
+            max-height: 297mm;
             margin: 0 auto;
             background-color: var(--color-bg-primary);
             display: grid;
             grid-template-columns: 1fr 2fr;
+            overflow: hidden;
         }
 
         /* Sidebar */
@@ -257,8 +268,8 @@
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -5px;
-            top: 4px;
+            left: -7px;
+            top: 0px;
             width: 8px;
             height: 8px;
             background-color: var(--color-bg-primary);
@@ -278,7 +289,8 @@
         .timeline-item.current::before {
             width: 10px;
             height: 10px;
-            left: -6px;
+            left: -8px;
+            top: 8px;
             background-color: var(--color-accent-strong);
             border-color: var(--color-accent-strong);
             box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
@@ -331,16 +343,19 @@
         }
 
         .timeline-description {
-            margin-top: 6px;
+            margin-top: 4px;
+            list-style: none;
+            padding-left: 0;
         }
 
         .timeline-description li {
             position: relative;
-            padding-left: 12px;
+            padding-left: 10px;
             color: var(--color-text-secondary);
-            font-size: 10px;
-            margin-bottom: 3px;
-            line-height: 1.5;
+            font-size: 9px;
+            margin-bottom: 2px;
+            line-height: 1.4;
+            list-style: none;
         }
 
         .timeline-description li::before {
