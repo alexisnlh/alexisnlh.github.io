@@ -1323,6 +1323,7 @@ button {
 
     .hero {
         padding: var(--spacing-3xl) 0;
+        padding-top: 100px;
     }
 
     .hero-title {
