@@ -1003,6 +1003,30 @@ button {
     margin-bottom: var(--spacing-md);
 }
 
+.project-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.metric {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    color: #a7f3d0;
+    background-color: rgba(16, 185, 129, 0.15);
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.metric-value {
+    font-weight: 600;
+    color: #10b981;
+}
+
 .project-tags {
     display: flex;
     flex-wrap: wrap;
