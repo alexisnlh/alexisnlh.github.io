@@ -1263,8 +1263,7 @@ button {
 
     .hero-image {
         order: -1;
-        margin-top: 100px !important;
-        padding-top: 20px;
+        margin-top: 60px;
     }
 
     .hero-image-wrapper {
@@ -1373,6 +1372,10 @@ button {
 
     .contact-methods {
         grid-template-columns: 1fr;
+    }
+
+    .scroll-indicator {
+        display: none;
     }
 }
 
