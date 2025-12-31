@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#818cf8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0b"/>
+
+  <!-- Logo centrado -->
+  <text x="600" y="300" font-family="'Fira Code', 'Courier New', monospace" font-size="180" text-anchor="middle" dominant-baseline="middle">
+    <tspan fill="url(#accentGrad)">&lt;</tspan><tspan fill="#ffffff">anl</tspan><tspan fill="url(#accentGrad)">h/&gt;</tspan>
+  </text>
+
+  <!-- Subtítulo -->
+  <text x="600" y="420" font-family="'Inter', 'Arial', sans-serif" font-size="48" fill="#71717a" text-anchor="middle">Software Engineer - Backend &amp; Data</text>
+</svg>
