@@ -1263,6 +1263,7 @@ button {
 
     .hero-image {
         order: -1;
+        margin-top: 80px;
     }
 
     .hero-image-wrapper {
@@ -1375,6 +1376,10 @@ button {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding-top: 120px;
+    }
+
     .hero-image-wrapper {
         width: 200px;
         height: 200px;
