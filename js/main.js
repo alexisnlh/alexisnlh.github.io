@@ -15,6 +15,27 @@
     const navLinks = document.querySelectorAll('.nav-link');
     const skillBars = document.querySelectorAll('.skill-progress');
     const sections = document.querySelectorAll('.section');
+    const themeToggle = document.getElementById('themeToggle');
+
+    // ============================================
+    // Theme Toggle
+    // ============================================
+    function initTheme() {
+        // Obtener tema guardado o usar preferencia del sistema
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+        document.documentElement.setAttribute('data-theme', theme);
+    }
+
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    }
 
     // ============================================
     // Navbar Scroll Effect
@@ -254,15 +275,154 @@
     }
 
     // ============================================
+    // Project View Toggle
+    // ============================================
+    function initViewToggle() {
+        const viewButtons = document.querySelectorAll('.view-toggle-btn');
+        const projectsGrid = document.querySelector('.projects-grid');
+
+        // Obtener vista guardada o usar grid por defecto
+        const savedView = localStorage.getItem('projectsView') || 'grid';
+        if (savedView === 'list') {
+            projectsGrid.classList.add('list-view');
+            viewButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-view') === 'list');
+            });
+        }
+
+        viewButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const view = button.getAttribute('data-view');
+
+                // Remove active class from all buttons
+                viewButtons.forEach(btn => btn.classList.remove('active'));
+
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                // Toggle view
+                if (view === 'list') {
+                    projectsGrid.classList.add('list-view');
+                } else {
+                    projectsGrid.classList.remove('list-view');
+                }
+
+                // Save preference
+                localStorage.setItem('projectsView', view);
+            });
+        });
+    }
+
+    // ============================================
+    // Project Filters
+    // ============================================
+    function initProjectFilters() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                // Get filter value
+                const filterValue = button.getAttribute('data-filter');
+
+                // Filter projects
+                projectCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+
+                    if (filterValue === 'all' || category === filterValue) {
+                        // Mostrar proyecto
+                        card.classList.remove('hidden');
+                        card.style.animation = 'fadeIn 0.4s ease-out';
+                    } else {
+                        // Ocultar proyecto
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    }
+
+    // ============================================
+    // Project Modals
+    // ============================================
+    function initModals() {
+        const modalTriggers = document.querySelectorAll('.project-details-btn');
+        const modals = document.querySelectorAll('.modal-overlay');
+        const modalCloses = document.querySelectorAll('.modal-close');
+
+        // Abrir modal al hacer click en "Ver detalles"
+        modalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const projectId = this.getAttribute('data-project');
+                const modal = document.getElementById(`modal-${projectId}`);
+
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Cerrar modal al hacer click en el botón de cerrar
+        modalCloses.forEach(closeBtn => {
+            closeBtn.addEventListener('click', () => {
+                const modal = closeBtn.closest('.modal-overlay');
+                if (modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // Cerrar modal al hacer click fuera del contenido
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // Cerrar modal con tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                modals.forEach(modal => {
+                    if (modal.classList.contains('active')) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        });
+    }
+
+    // ============================================
     // Initialize
     // ============================================
     function init() {
+        // Initialize Theme
+        initTheme();
+
         // Event Listeners
         window.addEventListener('scroll', throttle(handleNavbarScroll, 100));
         window.addEventListener('scroll', throttle(updateActiveNavLink, 100));
 
         if (navToggle) {
             navToggle.addEventListener('click', toggleMobileMenu);
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
         }
 
         navLinks.forEach(link => {
@@ -276,6 +436,15 @@
         animateSkillBars();
         initScrollAnimations();
         initTypingEffect();
+
+        // Initialize Modals
+        initModals();
+
+        // Initialize Project Filters
+        initProjectFilters();
+
+        // Initialize View Toggle
+        initViewToggle();
 
         // Initial state
         handleNavbarScroll();
