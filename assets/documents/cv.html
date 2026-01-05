@@ -81,8 +81,11 @@
         /* Sidebar */
         .sidebar {
             background-color: var(--color-bg-secondary);
-            padding: 20px 15px;
+            padding: 30px 15px 20px 15px;
             border-right: 1px solid var(--color-border);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .profile-section {
@@ -220,7 +223,10 @@
 
         /* Main Content */
         .main-content {
-            padding: 20px 18px;
+            padding: 30px 18px 20px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .main-section {
@@ -442,6 +448,75 @@
 
         .course-meta .in-progress {
             color: var(--color-accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cv-container {
+                height: auto;
+                max-height: none;
+                min-height: 100vh;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+            }
+
+            .sidebar {
+                padding: 20px 15px;
+                border-right: none;
+                border-bottom: 1px solid var(--color-border);
+            }
+
+            .main-content {
+                padding: 20px 15px;
+            }
+
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile-name {
+                font-size: 18px;
+            }
+
+            .main-title {
+                font-size: 12px;
+            }
+
+            .timeline-title {
+                font-size: 11px;
+            }
+
+            .timeline-description li {
+                font-size: 9px;
+            }
+
+            .education-degree {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 11px;
+            }
+
+            .cv-container {
+                padding: 0;
+            }
+
+            .sidebar, .main-content {
+                padding: 15px 12px;
+            }
+
+            .skills-tags, .timeline-tags {
+                gap: 2px;
+            }
+
+            .skill-tag, .timeline-tag {
+                font-size: 7px;
+                padding: 2px 4px;
+            }
         }
 
         /* Print Button */
