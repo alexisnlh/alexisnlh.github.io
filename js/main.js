@@ -368,6 +368,15 @@
                 if (modal) {
                     modal.classList.add('active');
                     document.body.style.overflow = 'hidden';
+
+                    // Resetear scroll del modal overlay después de que se muestre
+                    setTimeout(() => {
+                        modal.scrollTop = 0;
+                        const modalContent = modal.querySelector('.modal');
+                        if (modalContent) {
+                            modalContent.scrollTop = 0;
+                        }
+                    }, 0);
                 }
             });
         });
@@ -377,6 +386,13 @@
             closeBtn.addEventListener('click', () => {
                 const modal = closeBtn.closest('.modal-overlay');
                 if (modal) {
+                    // Resetear scroll antes de cerrar
+                    modal.scrollTop = 0;
+                    const modalContent = modal.querySelector('.modal');
+                    if (modalContent) {
+                        modalContent.scrollTop = 0;
+                    }
+
                     modal.classList.remove('active');
                     document.body.style.overflow = '';
                 }
@@ -387,6 +403,13 @@
         modals.forEach(modal => {
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
+                    // Resetear scroll antes de cerrar
+                    modal.scrollTop = 0;
+                    const modalContent = modal.querySelector('.modal');
+                    if (modalContent) {
+                        modalContent.scrollTop = 0;
+                    }
+
                     modal.classList.remove('active');
                     document.body.style.overflow = '';
                 }
@@ -398,6 +421,13 @@
             if (e.key === 'Escape') {
                 modals.forEach(modal => {
                     if (modal.classList.contains('active')) {
+                        // Resetear scroll antes de cerrar
+                        modal.scrollTop = 0;
+                        const modalContent = modal.querySelector('.modal');
+                        if (modalContent) {
+                            modalContent.scrollTop = 0;
+                        }
+
                         modal.classList.remove('active');
                         document.body.style.overflow = '';
                     }
