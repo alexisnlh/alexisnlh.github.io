@@ -450,10 +450,26 @@
             color: var(--color-accent);
         }
 
-        /* Mantener layout A4 en móvil - no cambiar a columna única */
+        /* Ocultar cursos del sidebar en desktop */
+        .courses-mobile {
+            display: none;
+        }
+
+        .course-item-sidebar {
+            margin-bottom: 6px;
+        }
+
+        /* Configuración para móvil */
         @media (max-width: 768px) {
-            /* El CV mantiene el formato A4 de dos columnas en móvil */
-            /* El usuario debe hacer zoom para ver el contenido */
+            /* Mostrar cursos en sidebar solo en móvil */
+            .courses-mobile {
+                display: block;
+            }
+
+            /* Ocultar cursos del main-content en móvil */
+            .main-content .main-section:last-child {
+                display: none;
+            }
         }
 
         /* Print Button */
@@ -647,6 +663,22 @@
                 <div class="language-item">
                     <span class="language-name">Inglés</span>
                     <span class="language-level">B1 (lectura avanzada)</span>
+                </div>
+            </div>
+
+            <!-- Cursos (solo visible en móvil) -->
+            <div class="sidebar-section courses-mobile">
+                <h2 class="sidebar-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    Cursos
+                </h2>
+                <div class="course-item-sidebar">
+                    <div class="skill-category-title">Universidad Python</div>
+                    <div class="language-level">Udemy · En curso</div>
                 </div>
             </div>
         </aside>
