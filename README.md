@@ -1,6 +1,6 @@
 # Portfolio Personal - Alexis Labrador
 
-> Software Engineer especializado en Backend & Data, Python, Django y automatización de procesos
+> Data Analyst especializado en Backend & Data, Python, Django y automatización de procesos
 
 ![Portfolio Preview](assets/images/og-image.svg)
 

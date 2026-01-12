@@ -199,7 +199,7 @@
         if (!typingElement) return;
 
         const texts = [
-            'Software Engineer - Backend & Data',
+            'Data Analyst - Backend & Data',
             'Backend Developer',
             'Data Engineer',
             'Especialista en Python & Django'
