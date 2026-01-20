@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV de Alexis Labrador - Data Analyst especializado en Backend & Data, Python, Django y automatización de procesos">
+    <meta name="robots" content="index, follow">
     <title>CV - Alexis Labrador | Data Analyst - Backend & Data</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -533,9 +535,12 @@
     </style>
 </head>
 <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#cv-main" class="sr-only" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Saltar al contenido principal</a>
+
     <!-- Back to Portfolio -->
-    <a href="../../index.html" class="back-link no-print">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <a href="../../index.html" class="back-link no-print" aria-label="Volver al portfolio principal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <line x1="19" y1="12" x2="5" y2="12"></line>
             <polyline points="12 19 5 12 12 5"></polyline>
         </svg>
@@ -543,8 +548,8 @@
     </a>
 
     <!-- Print Button -->
-    <button class="print-button no-print" onclick="window.print()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <button class="print-button no-print" id="printBtn" aria-label="Imprimir o guardar como PDF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <polyline points="6 9 6 2 18 2 18 9"></polyline>
             <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
             <rect x="6" y="14" width="12" height="8"></rect>
@@ -552,9 +557,24 @@
         Imprimir / Guardar PDF
     </button>
 
-    <div class="cv-container">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var printBtn = document.getElementById('printBtn');
+            if (printBtn) {
+                printBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setTimeout(function() {
+                        window.print();
+                    }, 100);
+                });
+            }
+        });
+    </script>
+
+    <div class="cv-container" id="cv-main" role="document">
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar" role="complementary" aria-label="Información de contacto y habilidades">
             <!-- Profile -->
             <div class="profile-section">
                 <img src="../images/profile.jpg" alt="Alexis Labrador" class="profile-photo">
@@ -684,7 +704,7 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main class="main-content" role="main" aria-label="Contenido principal del currículum">
             <!-- Summary -->
             <section class="main-section">
                 <h2 class="main-title">

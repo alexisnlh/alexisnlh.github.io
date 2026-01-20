@@ -27,14 +27,25 @@
         const theme = savedTheme || (prefersDark ? 'dark' : 'light');
 
         document.documentElement.setAttribute('data-theme', theme);
+
+        // Guardar el tema inicial si no estaba guardado
+        if (!savedTheme) {
+            localStorage.setItem('theme', theme);
+        }
     }
 
     function toggleTheme() {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
+        // Aplicar nuevo tema
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+
+        // Forzar repaint para asegurar que los estilos se apliquen
+        document.body.style.display = 'none';
+        document.body.offsetHeight; // Trigger reflow
+        document.body.style.display = '';
     }
 
     // ============================================
@@ -52,15 +63,22 @@
     // Mobile Menu Toggle
     // ============================================
     function toggleMobileMenu() {
+        const isActive = navMenu.classList.contains('active');
         navToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        document.body.style.overflow = !isActive ? 'hidden' : '';
+        // Update ARIA attributes
+        navToggle.setAttribute('aria-expanded', !isActive);
+        navToggle.setAttribute('aria-label', !isActive ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
     }
 
     function closeMobileMenu() {
         navToggle.classList.remove('active');
         navMenu.classList.remove('active');
         document.body.style.overflow = '';
+        // Update ARIA attributes
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Abrir menú de navegación');
     }
 
     // ============================================
@@ -294,11 +312,15 @@
             button.addEventListener('click', () => {
                 const view = button.getAttribute('data-view');
 
-                // Remove active class from all buttons
-                viewButtons.forEach(btn => btn.classList.remove('active'));
+                // Remove active class and update aria-pressed for all buttons
+                viewButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
+                });
 
-                // Add active class to clicked button
+                // Add active class and aria-pressed to clicked button
                 button.classList.add('active');
+                button.setAttribute('aria-pressed', 'true');
 
                 // Toggle view
                 if (view === 'list') {
@@ -322,11 +344,15 @@
 
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Remove active class and update aria-selected for all buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
+                });
 
-                // Add active class to clicked button
+                // Add active class and aria-selected to clicked button
                 button.classList.add('active');
+                button.setAttribute('aria-selected', 'true');
 
                 // Get filter value
                 const filterValue = button.getAttribute('data-filter');
@@ -353,8 +379,45 @@
     // ============================================
     function initModals() {
         const modalTriggers = document.querySelectorAll('.project-details-btn');
+        const projectCards = document.querySelectorAll('.project-card');
         const modals = document.querySelectorAll('.modal-overlay');
         const modalCloses = document.querySelectorAll('.modal-close');
+
+        // Función para abrir modal
+        function openModal(projectId) {
+            const modal = document.getElementById(`modal-${projectId}`);
+            if (modal) {
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+
+                setTimeout(() => {
+                    modal.scrollTop = 0;
+                    const modalContent = modal.querySelector('.modal');
+                    if (modalContent) {
+                        modalContent.scrollTop = 0;
+                    }
+                    const closeBtn = modal.querySelector('.modal-close');
+                    if (closeBtn) {
+                        closeBtn.focus();
+                    }
+                }, 0);
+            }
+        }
+
+        // Abrir modal al hacer click en toda la tarjeta de proyecto
+        projectCards.forEach((card, index) => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function(e) {
+                // No abrir modal si se hizo clic en un enlace externo
+                if (e.target.closest('.project-link') || e.target.closest('a')) {
+                    return;
+                }
+                e.preventDefault();
+                const projectId = `project-${index + 1}`;
+                openModal(projectId);
+            });
+        });
 
         // Abrir modal al hacer click en "Ver detalles"
         modalTriggers.forEach(trigger => {
@@ -363,55 +426,46 @@
                 e.stopPropagation();
 
                 const projectId = this.getAttribute('data-project');
-                const modal = document.getElementById(`modal-${projectId}`);
-
-                if (modal) {
-                    modal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-
-                    // Resetear scroll del modal overlay después de que se muestre
-                    setTimeout(() => {
-                        modal.scrollTop = 0;
-                        const modalContent = modal.querySelector('.modal');
-                        if (modalContent) {
-                            modalContent.scrollTop = 0;
-                        }
-                    }, 0);
-                }
+                openModal(projectId);
             });
         });
 
         // Cerrar modal al hacer click en el botón de cerrar
         modalCloses.forEach(closeBtn => {
-            closeBtn.addEventListener('click', () => {
-                const modal = closeBtn.closest('.modal-overlay');
-                if (modal) {
-                    // Resetear scroll antes de cerrar
-                    modal.scrollTop = 0;
-                    const modalContent = modal.querySelector('.modal');
-                    if (modalContent) {
-                        modalContent.scrollTop = 0;
-                    }
-
-                    modal.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
+            closeBtn.addEventListener('click', function() {
+                const modal = this.closest('.modal-overlay');
+                closeModal(modal);
             });
         });
+
+        // Helper function to close modal
+        function closeModal(modal) {
+            if (modal) {
+                // Resetear scroll antes de cerrar
+                modal.scrollTop = 0;
+                const modalContent = modal.querySelector('.modal');
+                if (modalContent) {
+                    modalContent.scrollTop = 0;
+                }
+
+                modal.classList.remove('active');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+
+                // Return focus to trigger button
+                const projectId = modal.id.replace('modal-', '');
+                const triggerBtn = document.querySelector(`[data-project="${projectId}"]`);
+                if (triggerBtn) {
+                    triggerBtn.focus();
+                }
+            }
+        }
 
         // Cerrar modal al hacer click fuera del contenido
         modals.forEach(modal => {
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
-                    // Resetear scroll antes de cerrar
-                    modal.scrollTop = 0;
-                    const modalContent = modal.querySelector('.modal');
-                    if (modalContent) {
-                        modalContent.scrollTop = 0;
-                    }
-
-                    modal.classList.remove('active');
-                    document.body.style.overflow = '';
+                    closeModal(modal);
                 }
             });
         });
@@ -421,15 +475,7 @@
             if (e.key === 'Escape') {
                 modals.forEach(modal => {
                     if (modal.classList.contains('active')) {
-                        // Resetear scroll antes de cerrar
-                        modal.scrollTop = 0;
-                        const modalContent = modal.querySelector('.modal');
-                        if (modalContent) {
-                            modalContent.scrollTop = 0;
-                        }
-
-                        modal.classList.remove('active');
-                        document.body.style.overflow = '';
+                        closeModal(modal);
                     }
                 });
             }

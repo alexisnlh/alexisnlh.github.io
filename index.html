@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,9 @@
     <meta name="keywords" content="Python, Django, Backend, Desarrollador, Portfolio">
     <meta name="author" content="Alexis Labrador">
     <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="canonical" href="https://alexisnlh.github.io/portfolio_personal/">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
@@ -18,6 +21,10 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="assets/images/profile.jpg" as="image">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,24 +58,24 @@
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-                <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
-                    <span class="hamburger"></span>
+                <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navMenu">
+                    <span class="hamburger" aria-hidden="true"></span>
                 </button>
             </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about" class="nav-link">Sobre mí</a></li>
-                <li><a href="#experience" class="nav-link">Experiencia</a></li>
-                <li><a href="#education" class="nav-link">Formación</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Proyectos</a></li>
-                <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
-                <li><a href="#contact" class="nav-link nav-link-cta">Contacto</a></li>
+            <ul class="nav-menu" id="navMenu" role="menubar" aria-label="Navegación principal">
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">Sobre mí</a></li>
+                <li role="none"><a href="#experience" class="nav-link" role="menuitem">Experiencia</a></li>
+                <li role="none"><a href="#education" class="nav-link" role="menuitem">Formación</a></li>
+                <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#projects" class="nav-link" role="menuitem">Proyectos</a></li>
+                <li role="none"><a href="#hobbies" class="nav-link" role="menuitem">Hobbies</a></li>
+                <li role="none"><a href="#contact" class="nav-link nav-link-cta" role="menuitem">Contacto</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <section class="hero" id="hero" aria-label="Introducción">
         <div class="hero-background">
             <div class="hero-gradient"></div>
             <div class="hero-grid"></div>
@@ -125,9 +132,9 @@
     </section>
 
     <!-- About Section -->
-    <section class="section" id="about">
+    <section class="section" id="about" role="region" aria-labelledby="about-title">
         <div class="container">
-            <h2 class="section-title">
+            <h2 class="section-title" id="about-title">
                 <span class="section-number">01.</span>
                 Sobre mí
             </h2>
@@ -169,14 +176,14 @@
     </section>
 
     <!-- Experience Section -->
-    <section class="section section-alt" id="experience">
+    <section class="section section-alt" id="experience" role="region" aria-labelledby="experience-title">
         <div class="container">
-            <h2 class="section-title">
+            <h2 class="section-title" id="experience-title">
                 <span class="section-number">02.</span>
                 Experiencia
             </h2>
-            <div class="timeline">
-                <div class="timeline-item">
+            <div class="timeline" role="list" aria-label="Historial de experiencia laboral">
+                <div class="timeline-item" role="listitem">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
@@ -203,7 +210,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" role="listitem">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
@@ -229,9 +236,9 @@
     </section>
 
     <!-- Education Section -->
-    <section class="section" id="education">
+    <section class="section" id="education" role="region" aria-labelledby="education-title">
         <div class="container">
-            <h2 class="section-title">
+            <h2 class="section-title" id="education-title">
                 <span class="section-number">03.</span>
                 Formación
             </h2>
@@ -290,9 +297,9 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="section section-alt" id="skills">
+    <section class="section section-alt" id="skills" role="region" aria-labelledby="skills-title">
         <div class="container">
-            <h2 class="section-title">
+            <h2 class="section-title" id="skills-title">
                 <span class="section-number">04.</span>
                 Skills
             </h2>
@@ -484,30 +491,30 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="section" id="projects">
+    <section class="section" id="projects" role="region" aria-labelledby="projects-title">
         <div class="container">
-            <h2 class="section-title">
+            <h2 class="section-title" id="projects-title">
                 <span class="section-number">05.</span>
                 Proyectos
             </h2>
             <div class="projects-controls">
-                <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="backend">Backend</button>
-                    <button class="filter-btn" data-filter="data-engineering">Data Engineering</button>
-                    <button class="filter-btn" data-filter="data-science">Data Science</button>
+                <div class="project-filters" role="tablist" aria-label="Filtrar proyectos por categoría">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="projects-grid">Todos</button>
+                    <button class="filter-btn" data-filter="backend" role="tab" aria-selected="false" aria-controls="projects-grid">Backend</button>
+                    <button class="filter-btn" data-filter="data-engineering" role="tab" aria-selected="false" aria-controls="projects-grid">Data Engineering</button>
+                    <button class="filter-btn" data-filter="data-science" role="tab" aria-selected="false" aria-controls="projects-grid">Data Science</button>
                 </div>
-                <div class="view-toggles">
-                    <button class="view-toggle-btn active" data-view="grid" aria-label="Vista de cuadrícula">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="view-toggles" role="group" aria-label="Cambiar vista de proyectos">
+                    <button class="view-toggle-btn active" data-view="grid" aria-label="Vista de cuadrícula" aria-pressed="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <rect x="3" y="3" width="7" height="7"></rect>
                             <rect x="14" y="3" width="7" height="7"></rect>
                             <rect x="14" y="14" width="7" height="7"></rect>
                             <rect x="3" y="14" width="7" height="7"></rect>
                         </svg>
                     </button>
-                    <button class="view-toggle-btn" data-view="list" aria-label="Vista de lista">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <button class="view-toggle-btn" data-view="list" aria-label="Vista de lista" aria-pressed="false">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <line x1="8" y1="6" x2="21" y2="6"></line>
                             <line x1="8" y1="12" x2="21" y2="12"></line>
                             <line x1="8" y1="18" x2="21" y2="18"></line>
@@ -518,10 +525,10 @@
                     </button>
                 </div>
             </div>
-            <div class="projects-grid">
+            <div class="projects-grid" id="projects-grid" role="tabpanel" aria-label="Lista de proyectos">
                 <article class="project-card" data-category="backend">
                     <div class="project-image">
-                        <img src="assets/images/project-1.svg" alt="API REST Gestión de Incidencias">
+                        <img src="assets/images/project-1.svg" alt="API REST Gestión de Incidencias" loading="lazy">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <span class="project-link" title="Código privado - Proyecto corporativo">
@@ -567,7 +574,7 @@
                 </article>
                 <article class="project-card" data-category="data-engineering">
                     <div class="project-image">
-                        <img src="assets/images/project-2.svg" alt="Sistema ETL Inventario">
+                        <img src="assets/images/project-2.svg" alt="Sistema ETL Inventario" loading="lazy">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <span class="project-link" title="Código privado - Proyecto corporativo">
@@ -613,7 +620,7 @@
                 </article>
                 <article class="project-card" data-category="data-science">
                     <div class="project-image">
-                        <img src="assets/images/project-3.svg" alt="Data Preprocessing ML">
+                        <img src="assets/images/project-3.svg" alt="Data Preprocessing ML" loading="lazy">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/alexisnlh/entregable_1_data_engineering" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver código en GitHub">
@@ -668,16 +675,16 @@
     </section>
 
     <!-- Hobbies Section -->
-    <section class="section section-alt" id="hobbies">
+    <section class="section section-alt" id="hobbies" role="region" aria-labelledby="hobbies-title">
         <div class="container">
-            <h2 class="section-title">
+            <h2 class="section-title" id="hobbies-title">
                 <span class="section-number">06.</span>
                 Hobbies
             </h2>
             <p class="section-subtitle">Cuando no estoy programando, me encontrarás...</p>
-            <div class="hobbies-grid">
-                <div class="hobby-card">
-                    <div class="hobby-icon">
+            <div class="hobbies-grid" role="list" aria-label="Lista de hobbies">
+                <div class="hobby-card" role="listitem">
+                    <div class="hobby-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
@@ -686,8 +693,8 @@
                     <h3 class="hobby-title">Lectura</h3>
                     <p class="hobby-description">Suspenso, crimen y terror. Desde Orwell y Sherlock Holmes hasta temas de la actualidad.</p>
                 </div>
-                <div class="hobby-card">
-                    <div class="hobby-icon">
+                <div class="hobby-card" role="listitem">
+                    <div class="hobby-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="6" y1="3" x2="6" y2="15"></line>
                             <circle cx="18" cy="6" r="3"></circle>
@@ -698,8 +705,8 @@
                     <h3 class="hobby-title">Música</h3>
                     <p class="hobby-description">Guitarra y piano. Disfruto tocando cuando puedo.</p>
                 </div>
-                <div class="hobby-card">
-                    <div class="hobby-icon">
+                <div class="hobby-card" role="listitem">
+                    <div class="hobby-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="6" width="20" height="12" rx="2"></rect>
                             <path d="M12 12h.01"></path>
@@ -712,8 +719,8 @@
                     <h3 class="hobby-title">Gaming</h3>
                     <p class="hobby-description">Jugando cuando el tiempo lo permite.</p>
                 </div>
-                <div class="hobby-card">
-                    <div class="hobby-icon">
+                <div class="hobby-card" role="listitem">
+                    <div class="hobby-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
                             <line x1="7" y1="2" x2="7" y2="22"></line>
@@ -733,9 +740,9 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="section" id="contact">
+    <section class="section" id="contact" role="region" aria-labelledby="contact-title">
         <div class="container">
-            <h2 class="section-title">
+            <h2 class="section-title" id="contact-title">
                 <span class="section-number">07.</span>
                 Contacto
             </h2>
@@ -776,12 +783,12 @@
     </section>
 
     <!-- Project Modals -->
-    <div class="modal-overlay" id="modal-project-1">
+    <div class="modal-overlay" id="modal-project-1" role="dialog" aria-modal="true" aria-labelledby="modal-title-1" aria-hidden="true">
         <div class="modal">
             <div class="modal-header">
                 <div class="modal-header-content">
                     <span class="modal-category">Backend API</span>
-                    <h3 class="modal-title">API REST - Gestión de Incidencias</h3>
+                    <h3 class="modal-title" id="modal-title-1">API REST - Gestión de Incidencias</h3>
                 </div>
                 <button class="modal-close" aria-label="Cerrar modal">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -859,12 +866,12 @@
         </div>
     </div>
 
-    <div class="modal-overlay" id="modal-project-2">
+    <div class="modal-overlay" id="modal-project-2" role="dialog" aria-modal="true" aria-labelledby="modal-title-2" aria-hidden="true">
         <div class="modal">
             <div class="modal-header">
                 <div class="modal-header-content">
                     <span class="modal-category">Data Engineering</span>
-                    <h3 class="modal-title">Sistema ETL - Gestión de Inventario</h3>
+                    <h3 class="modal-title" id="modal-title-2">Sistema ETL - Gestión de Inventario</h3>
                 </div>
                 <button class="modal-close" aria-label="Cerrar modal">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -943,12 +950,12 @@
         </div>
     </div>
 
-    <div class="modal-overlay" id="modal-project-3">
+    <div class="modal-overlay" id="modal-project-3" role="dialog" aria-modal="true" aria-labelledby="modal-title-3" aria-hidden="true">
         <div class="modal">
             <div class="modal-header">
                 <div class="modal-header-content">
                     <span class="modal-category">Data Science</span>
-                    <h3 class="modal-title">Data Preprocessing - BMW Pricing</h3>
+                    <h3 class="modal-title" id="modal-title-3">Data Preprocessing - BMW Pricing</h3>
                 </div>
                 <button class="modal-close" aria-label="Cerrar modal">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1045,6 +1052,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
