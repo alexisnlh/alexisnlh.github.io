@@ -1,203 +1,134 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
   <defs>
-    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#121318"/>
-      <stop offset="100%" style="stop-color:#1a1b21"/>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0b"/>
+      <stop offset="100%" style="stop-color:#121318"/>
     </linearGradient>
-    <linearGradient id="cardGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#2a2b30"/>
-      <stop offset="100%" style="stop-color:#222329"/>
+    <linearGradient id="accent-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
     </linearGradient>
-    <linearGradient id="accentGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#f59e0b"/>
-      <stop offset="100%" style="stop-color:#fbbf24"/>
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
     </linearGradient>
-    <filter id="shadow3" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
-    </filter>
+    <linearGradient id="red-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f87171"/>
+    </linearGradient>
   </defs>
-
+  
   <!-- Background -->
-  <rect width="800" height="400" fill="url(#bgGrad3)"/>
-
+  <rect width="800" height="450" fill="url(#bg-gradient)"/>
+  
   <!-- Grid pattern -->
-  <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
-    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2a2b30" stroke-width="0.5"/>
-  </pattern>
-  <rect width="800" height="400" fill="url(#grid3)" opacity="0.5"/>
-
+  <g opacity="0.1">
+    <line x1="0" y1="50" x2="800" y2="50" stroke="#6366f1" stroke-width="1"/>
+    <line x1="0" y1="100" x2="800" y2="100" stroke="#6366f1" stroke-width="1"/>
+    <line x1="0" y1="150" x2="800" y2="150" stroke="#6366f1" stroke-width="1"/>
+    <line x1="0" y1="200" x2="800" y2="200" stroke="#6366f1" stroke-width="1"/>
+    <line x1="0" y1="250" x2="800" y2="250" stroke="#6366f1" stroke-width="1"/>
+    <line x1="0" y1="300" x2="800" y2="300" stroke="#6366f1" stroke-width="1"/>
+    <line x1="0" y1="350" x2="800" y2="350" stroke="#6366f1" stroke-width="1"/>
+    <line x1="0" y1="400" x2="800" y2="400" stroke="#6366f1" stroke-width="1"/>
+  </g>
+  
   <!-- Title -->
-  <text x="400" y="35" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#f0f0f2" text-anchor="middle">Data Preprocessing - BMW Pricing Prediction</text>
-  <text x="400" y="55" font-family="Inter, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Limpieza y preparación de datos para modelo de Machine Learning</text>
-
-  <!-- Pipeline Flow -->
-
-  <!-- Step 1: Raw Data -->
-  <g transform="translate(30, 90)">
-    <rect width="140" height="100" rx="10" fill="url(#cardGrad3)" filter="url(#shadow3)" stroke="#ef4444" stroke-width="2"/>
-    <text x="70" y="25" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#ef4444" text-anchor="middle">Raw Data</text>
-    <line x1="15" y1="35" x2="125" y2="35" stroke="#3f3f46" stroke-width="1"/>
-    <text x="70" y="52" font-family="Fira Code, monospace" font-size="9" fill="#9ca3af" text-anchor="middle">raw_file.csv</text>
-    <text x="70" y="68" font-family="Fira Code, monospace" font-size="8" fill="#6b7280" text-anchor="middle">4k registros</text>
-    <text x="70" y="82" font-family="Fira Code, monospace" font-size="8" fill="#6b7280" text-anchor="middle">Nulls • Outliers</text>
+  <text x="400" y="40" text-anchor="middle" fill="#f0f0f2" font-family="monospace" font-size="18" font-weight="bold">MALWARE DETECTION SYSTEM</text>
+  
+  <!-- Data Input Section -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="180" height="120" rx="8" fill="#1a1a2e" stroke="#6366f1" stroke-width="2"/>
+    <text x="90" y="25" text-anchor="middle" fill="#6366f1" font-family="monospace" font-size="12" font-weight="bold">DATA INPUT</text>
+    <text x="90" y="50" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="10">Windows Defender</text>
+    <text x="90" y="65" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="10">Telemetry</text>
+    <text x="90" y="90" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="14" font-weight="bold">500K records</text>
+    <text x="90" y="108" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="10">83 features</text>
   </g>
-
+  
   <!-- Arrow 1 -->
-  <path d="M175 140 L210 140" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrowhead3)"/>
-
-  <!-- Step 2: Analysis -->
-  <g transform="translate(220, 90)">
-    <rect width="140" height="100" rx="10" fill="url(#cardGrad3)" filter="url(#shadow3)" stroke="url(#accentGrad3)" stroke-width="2"/>
-    <text x="70" y="25" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#fbbf24" text-anchor="middle">Análisis EDA</text>
-    <line x1="15" y1="35" x2="125" y2="35" stroke="#3f3f46" stroke-width="1"/>
-    <text x="70" y="52" font-family="Fira Code, monospace" font-size="8" fill="#9ca3af" text-anchor="middle">📊 Distribuciones</text>
-    <text x="70" y="66" font-family="Fira Code, monospace" font-size="8" fill="#9ca3af" text-anchor="middle">📈 Correlaciones</text>
-    <text x="70" y="80" font-family="Fira Code, monospace" font-size="8" fill="#9ca3af" text-anchor="middle">🔍 Outliers (IQR)</text>
+  <g transform="translate(240, 130)">
+    <line x1="0" y1="0" x2="50" y2="0" stroke="url(#accent-gradient)" stroke-width="3"/>
+    <polygon points="50,0 40,-6 40,6" fill="#6366f1"/>
   </g>
-
+  
+  <!-- Preprocessing Section -->
+  <g transform="translate(300, 80)">
+    <rect x="0" y="0" width="200" height="120" rx="8" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="#8b5cf6" font-family="monospace" font-size="12" font-weight="bold">PREPROCESSING</text>
+    <text x="100" y="50" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="9">• Cleaning &amp; Normalization</text>
+    <text x="100" y="65" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="9">• Missing Value Imputation</text>
+    <text x="100" y="80" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="9">• Feature Engineering</text>
+    <text x="100" y="95" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="9">• Frequency Encoding</text>
+    <text x="100" y="110" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="9">• One-Hot Encoding</text>
+  </g>
+  
   <!-- Arrow 2 -->
-  <path d="M365 140 L400 140" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrowhead3)"/>
-
-  <!-- Step 3: Cleaning -->
-  <g transform="translate(410, 90)">
-    <rect width="140" height="100" rx="10" fill="url(#cardGrad3)" filter="url(#shadow3)" stroke="url(#accentGrad3)" stroke-width="2"/>
-    <text x="70" y="25" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#fbbf24" text-anchor="middle">Limpieza</text>
-    <line x1="15" y1="35" x2="125" y2="35" stroke="#3f3f46" stroke-width="1"/>
-    <text x="70" y="52" font-family="Fira Code, monospace" font-size="8" fill="#9ca3af" text-anchor="middle">🗑️ Nulls handling</text>
-    <text x="70" y="66" font-family="Fira Code, monospace" font-size="8" fill="#9ca3af" text-anchor="middle">📅 Feature dates</text>
-    <text x="70" y="80" font-family="Fira Code, monospace" font-size="8" fill="#9ca3af" text-anchor="middle">🏷️ One-Hot Encoding</text>
+  <g transform="translate(510, 130)">
+    <line x1="0" y1="0" x2="50" y2="0" stroke="url(#accent-gradient)" stroke-width="3"/>
+    <polygon points="50,0 40,-6 40,6" fill="#6366f1"/>
   </g>
-
-  <!-- Arrow 3 -->
-  <path d="M555 140 L590 140" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrowhead3)"/>
-
-  <!-- Step 4: Clean Data -->
-  <g transform="translate(600, 90)">
-    <rect width="160" height="100" rx="10" fill="url(#cardGrad3)" filter="url(#shadow3)" stroke="#10b981" stroke-width="2"/>
-    <text x="80" y="25" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#10b981" text-anchor="middle">Clean Dataset</text>
-    <line x1="15" y1="35" x2="145" y2="35" stroke="#3f3f46" stroke-width="1"/>
-    <text x="80" y="52" font-family="Fira Code, monospace" font-size="9" fill="#9ca3af" text-anchor="middle">✅ ML Ready</text>
-    <text x="80" y="68" font-family="Fira Code, monospace" font-size="8" fill="#6b7280" text-anchor="middle">Normalized data</text>
-    <text x="80" y="82" font-family="Fira Code, monospace" font-size="8" fill="#6b7280" text-anchor="middle">No multicollinearity</text>
+  
+  <!-- ML Models Section -->
+  <g transform="translate(570, 80)">
+    <rect x="0" y="0" width="180" height="120" rx="8" fill="#1a1a2e" stroke="#10b981" stroke-width="2"/>
+    <text x="90" y="25" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="12" font-weight="bold">ML MODELS</text>
+    <text x="90" y="50" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="10">Decision Tree</text>
+    <text x="90" y="65" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="10">Random Forest</text>
+    <text x="90" y="80" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="10">XGBoost</text>
+    <text x="90" y="95" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="10" font-weight="bold">LightGBM ✓</text>
+    <text x="90" y="112" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="9">(Best Model)</text>
   </g>
-
-  <!-- Visualizations Section -->
-  <g transform="translate(30, 220)">
-    <text x="0" y="15" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#f0f0f2">Visualizaciones Generadas</text>
-
-    <!-- Boxplot mockup -->
-    <g transform="translate(0, 30)">
-      <rect width="170" height="110" rx="8" fill="url(#cardGrad3)" filter="url(#shadow3)" stroke="#3f3f46" stroke-width="1"/>
-      <text x="85" y="20" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#9ca3af" text-anchor="middle">Boxplot - Outliers</text>
-      <!-- Boxplot visual -->
-      <g transform="translate(25, 35)">
-        <line x1="20" y1="60" x2="100" y2="60" stroke="#3f3f46" stroke-width="1"/>
-        <line x1="20" y1="30" x2="20" y2="60" stroke="#3f3f46" stroke-width="1"/>
-        <!-- Box 1 -->
-        <rect x="30" y="25" width="15" height="30" fill="#6366f1" opacity="0.3" stroke="#6366f1"/>
-        <line x1="37" y1="15" x2="37" y2="25" stroke="#6366f1"/>
-        <line x1="37" y1="55" x2="37" y2="60" stroke="#6366f1"/>
-        <!-- Box 2 -->
-        <rect x="55" y="20" width="15" height="35" fill="#10b981" opacity="0.3" stroke="#10b981"/>
-        <line x1="62" y1="10" x2="62" y2="20" stroke="#10b981"/>
-        <line x1="62" y1="55" x2="62" y2="60" stroke="#10b981"/>
-        <!-- Box 3 -->
-        <rect x="80" y="30" width="15" height="25" fill="#f59e0b" opacity="0.3" stroke="#f59e0b"/>
-        <line x1="87" y1="20" x2="87" y2="30" stroke="#f59e0b"/>
-        <line x1="87" y1="55" x2="87" y2="60" stroke="#f59e0b"/>
-      </g>
+  
+  <!-- Results Section -->
+  <g transform="translate(200, 240)">
+    <rect x="0" y="0" width="400" height="180" rx="8" fill="#1a1a2e" stroke="#6366f1" stroke-width="2"/>
+    <text x="200" y="30" text-anchor="middle" fill="#f0f0f2" font-family="monospace" font-size="14" font-weight="bold">MODEL PERFORMANCE</text>
+    
+    <!-- Metrics Grid -->
+    <g transform="translate(20, 50)">
+      <!-- ROC-AUC -->
+      <rect x="0" y="0" width="85" height="60" rx="4" fill="#0a0a0b" stroke="#6366f1" stroke-width="1"/>
+      <text x="42" y="25" text-anchor="middle" fill="#6366f1" font-family="monospace" font-size="20" font-weight="bold">71%</text>
+      <text x="42" y="45" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="9">ROC-AUC</text>
+      
+      <!-- Accuracy -->
+      <rect x="95" y="0" width="85" height="60" rx="4" fill="#0a0a0b" stroke="#10b981" stroke-width="1"/>
+      <text x="137" y="25" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="20" font-weight="bold">65%</text>
+      <text x="137" y="45" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="9">Accuracy</text>
+      
+      <!-- Precision -->
+      <rect x="190" y="0" width="85" height="60" rx="4" fill="#0a0a0b" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="232" y="25" text-anchor="middle" fill="#8b5cf6" font-family="monospace" font-size="20" font-weight="bold">65%</text>
+      <text x="232" y="45" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="9">Precision</text>
+      
+      <!-- F1-Score -->
+      <rect x="285" y="0" width="85" height="60" rx="4" fill="#0a0a0b" stroke="#f59e0b" stroke-width="1"/>
+      <text x="327" y="25" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="20" font-weight="bold">65%</text>
+      <text x="327" y="45" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="9">F1-Score</text>
     </g>
-
-    <!-- Correlation heatmap mockup -->
-    <g transform="translate(190, 30)">
-      <rect width="170" height="110" rx="8" fill="url(#cardGrad3)" filter="url(#shadow3)" stroke="#3f3f46" stroke-width="1"/>
-      <text x="85" y="20" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#9ca3af" text-anchor="middle">Matriz Correlación</text>
-      <!-- Heatmap visual - centrado: (170 - 64) / 2 = 53 para x, y ajustado para centrar verticalmente -->
-      <g transform="translate(53, 33)">
-        <rect x="0" y="0" width="16" height="16" fill="#10b981"/>
-        <rect x="16" y="0" width="16" height="16" fill="#6366f1" opacity="0.5"/>
-        <rect x="32" y="0" width="16" height="16" fill="#ef4444" opacity="0.3"/>
-        <rect x="48" y="0" width="16" height="16" fill="#6366f1" opacity="0.7"/>
-        
-        <rect x="0" y="16" width="16" height="16" fill="#6366f1" opacity="0.5"/>
-        <rect x="16" y="16" width="16" height="16" fill="#10b981"/>
-        <rect x="32" y="16" width="16" height="16" fill="#f59e0b" opacity="0.6"/>
-        <rect x="48" y="16" width="16" height="16" fill="#ef4444" opacity="0.4"/>
-        
-        <rect x="0" y="32" width="16" height="16" fill="#ef4444" opacity="0.3"/>
-        <rect x="16" y="32" width="16" height="16" fill="#f59e0b" opacity="0.6"/>
-        <rect x="32" y="32" width="16" height="16" fill="#10b981"/>
-        <rect x="48" y="32" width="16" height="16" fill="#6366f1" opacity="0.8"/>
-        
-        <rect x="0" y="48" width="16" height="16" fill="#6366f1" opacity="0.7"/>
-        <rect x="16" y="48" width="16" height="16" fill="#ef4444" opacity="0.4"/>
-        <rect x="32" y="48" width="16" height="16" fill="#6366f1" opacity="0.8"/>
-        <rect x="48" y="48" width="16" height="16" fill="#10b981"/>
-      </g>
-    </g>
-
-    <!-- Histogram mockup -->
-    <g transform="translate(380, 30)">
-      <rect width="170" height="110" rx="8" fill="url(#cardGrad3)" filter="url(#shadow3)" stroke="#3f3f46" stroke-width="1"/>
-      <text x="85" y="20" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#9ca3af" text-anchor="middle">Distribución Precio</text>
-      <!-- Histogram visual -->
-      <g transform="translate(25, 85)">
-        <line x1="0" y1="0" x2="120" y2="0" stroke="#3f3f46" stroke-width="1"/>
-        <line x1="0" y1="0" x2="0" y2="-55" stroke="#3f3f46" stroke-width="1"/>
-        <rect x="5" y="-15" width="12" height="15" fill="#6366f1" opacity="0.7"/>
-        <rect x="20" y="-35" width="12" height="35" fill="#6366f1" opacity="0.7"/>
-        <rect x="35" y="-50" width="12" height="50" fill="#6366f1" opacity="0.7"/>
-        <rect x="50" y="-45" width="12" height="45" fill="#6366f1" opacity="0.7"/>
-        <rect x="65" y="-30" width="12" height="30" fill="#6366f1" opacity="0.7"/>
-        <rect x="80" y="-20" width="12" height="20" fill="#6366f1" opacity="0.7"/>
-        <rect x="95" y="-10" width="12" height="10" fill="#6366f1" opacity="0.7"/>
-      </g>
-    </g>
+    
+    <!-- Top Features -->
+    <text x="200" y="135" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="10">Top Features: AVProductStatesIdentifier, Census_OSBuildRevision,</text>
+    <text x="200" y="150" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="10">SystemVolumeTotalCapacity, ProcessorModelIdentifier</text>
+    
+    <!-- Target Balance -->
+    <text x="200" y="170" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="9">Target: HasDetections (Balanced ~50/50)</text>
   </g>
-
-  <!-- Key Findings -->
-  <g transform="translate(570, 220)">
-    <rect width="200" height="140" rx="8" fill="url(#cardGrad3)" filter="url(#shadow3)" stroke="#3f3f46" stroke-width="1"/>
-    <text x="100" y="22" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#f0f0f2" text-anchor="middle">📋 Key Findings</text>
-    <line x1="15" y1="32" x2="185" y2="32" stroke="#3f3f46" stroke-width="1"/>
-    <text x="20" y="52" font-family="Fira Code, monospace" font-size="8" fill="#10b981">✓</text>
-    <text x="35" y="52" font-family="Inter, sans-serif" font-size="8" fill="#9ca3af">Potencia: +0.68 correlación</text>
-    <text x="20" y="70" font-family="Fira Code, monospace" font-size="8" fill="#10b981">✓</text>
-    <text x="35" y="70" font-family="Inter, sans-serif" font-size="8" fill="#9ca3af">KM: -0.42 correlación</text>
-    <text x="20" y="88" font-family="Fira Code, monospace" font-size="8" fill="#10b981">✓</text>
-    <text x="35" y="88" font-family="Inter, sans-serif" font-size="8" fill="#9ca3af">Sin multicolinealidad</text>
-    <text x="20" y="106" font-family="Fira Code, monospace" font-size="8" fill="#10b981">✓</text>
-    <text x="35" y="106" font-family="Inter, sans-serif" font-size="8" fill="#9ca3af">Datos normalizados</text>
-    <text x="20" y="124" font-family="Fira Code, monospace" font-size="8" fill="#f59e0b">→</text>
-    <text x="35" y="124" font-family="Inter, sans-serif" font-size="8" fill="#fbbf24">Ready for ML training</text>
+  
+  <!-- Shield Icon -->
+  <g transform="translate(50, 280)">
+    <path d="M60,10 L110,30 L110,70 C110,100 85,120 60,130 C35,120 10,100 10,70 L10,30 Z" 
+          fill="none" stroke="url(#green-gradient)" stroke-width="3"/>
+    <text x="60" y="75" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="24">✓</text>
+    <text x="60" y="155" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="10">Protected</text>
   </g>
-
-  <!-- Tech Stack -->
-  <g transform="translate(30, 365)">
-    <rect x="0" y="0" width="280" height="30" rx="6" fill="#1a1b21" stroke="#3f3f46" stroke-width="1"/>
-    <text x="15" y="20" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#9ca3af">Tech:</text>
-    <g transform="translate(50, 7)">
-      <rect width="40" height="16" rx="3" fill="#f59e0b" opacity="0.2"/>
-      <text x="20" y="12" font-family="Fira Code, monospace" font-size="7" fill="#fbbf24" text-anchor="middle">Pandas</text>
-    </g>
-    <g transform="translate(95, 7)">
-      <rect width="40" height="16" rx="3" fill="#f59e0b" opacity="0.2"/>
-      <text x="20" y="12" font-family="Fira Code, monospace" font-size="7" fill="#fbbf24" text-anchor="middle">NumPy</text>
-    </g>
-    <g transform="translate(140, 7)">
-      <rect width="50" height="16" rx="3" fill="#f59e0b" opacity="0.2"/>
-      <text x="25" y="12" font-family="Fira Code, monospace" font-size="7" fill="#fbbf24" text-anchor="middle">Seaborn</text>
-    </g>
-    <g transform="translate(195, 7)">
-      <rect width="45" height="16" rx="3" fill="#f59e0b" opacity="0.2"/>
-      <text x="22" y="12" font-family="Fira Code, monospace" font-size="7" fill="#fbbf24" text-anchor="middle">Sklearn</text>
-    </g>
+  
+  <!-- Virus Icon -->
+  <g transform="translate(670, 280)">
+    <circle cx="60" cy="60" r="40" fill="none" stroke="url(#red-gradient)" stroke-width="3"/>
+    <line x1="30" y1="30" x2="90" y2="90" stroke="#ef4444" stroke-width="3"/>
+    <line x1="90" y1="30" x2="30" y2="90" stroke="#ef4444" stroke-width="3"/>
+    <text x="60" y="125" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="10">Malware</text>
   </g>
-
-  <!-- Arrow marker -->
-  <defs>
-    <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
-    </marker>
-  </defs>
 </svg>

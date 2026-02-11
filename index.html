@@ -632,7 +632,7 @@
                         <img src="assets/images/project-3.svg" alt="Data Preprocessing ML" loading="lazy">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/alexisnlh/entregable_1_data_engineering" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver código en GitHub">
+                                <a href="https://github.com/alexisnlh/malware-detection-supervised-ml" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver código en GitHub">
                                     <svg viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                     </svg>
@@ -643,23 +643,25 @@
                     <div class="project-content">
                         <span class="project-category">Data Science</span>
                         <div class="project-badges">
-                            <span class="impact-badge badge-data-driven">📊 Data-driven</span>
+                            <span class="impact-badge badge-data-driven">🛡️ ML Security</span>
                         </div>
-                        <h3 class="project-title">Data Preprocessing - BMW Pricing</h3>
+                        <h3 class="project-title">Malware Detection - Supervised ML</h3>
                         <p class="project-description">
-                            Proyecto inicial del Máster en Data Science: limpieza y preprocesamiento de datos para predicción de precios. 
-                            Incluye análisis EDA, tratamiento de outliers, encoding y análisis de correlaciones.
+                            Detección preventiva de malware en Windows mediante ML supervisado. 
+                            Análisis de telemetría de Windows Defender con Decision Tree, Random Forest, XGBoost y LightGBM.
                         </p>
                         <div class="project-metrics">
-                            <span class="metric"><span class="metric-value">4,843</span> registros</span>
-                            <span class="metric"><span class="metric-value">18→77</span> features</span>
-                            <span class="metric"><span class="metric-value">98%</span> datos válidos</span>
+                            <span class="metric"><span class="metric-value">500K</span> registros</span>
+                            <span class="metric"><span class="metric-value">71%</span> ROC-AUC</span>
+                            <span class="metric"><span class="metric-value">4</span> modelos</span>
                         </div>
                         <div class="project-tags">
                             <span class="tag">Python</span>
                             <span class="tag">Pandas</span>
                             <span class="tag">Seaborn</span>
                             <span class="tag">Scikit-learn</span>
+                            <span class="tag">XGBoost</span>
+                            <span class="tag">LightGBM</span>
                         </div>
                         <button class="project-details-btn" data-project="project-3">
                             Ver detalles
@@ -964,7 +966,7 @@
             <div class="modal-header">
                 <div class="modal-header-content">
                     <span class="modal-category">Data Science</span>
-                    <h3 class="modal-title" id="modal-title-3">Data Preprocessing - BMW Pricing</h3>
+                    <h3 class="modal-title" id="modal-title-3">Malware Detection - Supervised ML</h3>
                 </div>
                 <button class="modal-close" aria-label="Cerrar modal">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -984,9 +986,9 @@
                         Contexto del Proyecto
                     </h4>
                     <p class="modal-text">
-                        Proyecto inicial del Máster en Data Science enfocado en el preprocesamiento de datos para predicción
-                        de precios de vehículos BMW. El dataset contenía información desorganizada con valores faltantes,
-                        outliers y variables categóricas sin codificar.
+                        Proyecto del Máster en Data Science & AI enfocado en la detección preventiva de malware en máquinas Windows
+                        mediante Machine Learning supervisado. Utiliza datos de telemetría de Windows Defender con ~500,000 registros
+                        y 83 features para predecir si una máquina está potencialmente infectada.
                     </p>
                 </div>
                 <div class="modal-section">
@@ -994,33 +996,34 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                         </svg>
-                        Resultados del Análisis
+                        Resultados del Modelo
                     </h4>
                     <div class="modal-metrics-grid">
                         <div class="modal-metric-card">
-                            <div class="modal-metric-value">4,843</div>
-                            <div class="modal-metric-label">Registros procesados</div>
+                            <div class="modal-metric-value">500K</div>
+                            <div class="modal-metric-label">Registros analizados</div>
                         </div>
                         <div class="modal-metric-card">
-                            <div class="modal-metric-value">18 → 77</div>
-                            <div class="modal-metric-label">Features generadas</div>
+                            <div class="modal-metric-value">71%</div>
+                            <div class="modal-metric-label">ROC-AUC Score</div>
                         </div>
                         <div class="modal-metric-card">
-                            <div class="modal-metric-value">98%</div>
-                            <div class="modal-metric-label">Datos válidos</div>
+                            <div class="modal-metric-value">65%</div>
+                            <div class="modal-metric-label">Accuracy</div>
                         </div>
                         <div class="modal-metric-card">
-                            <div class="modal-metric-value">12</div>
-                            <div class="modal-metric-label">Técnicas aplicadas</div>
+                            <div class="modal-metric-value">4</div>
+                            <div class="modal-metric-label">Modelos comparados</div>
                         </div>
                     </div>
                     <ul class="modal-list">
-                        <li>Análisis exploratorio completo (EDA) con visualizaciones interactivas</li>
-                        <li>Tratamiento de valores nulos utilizando múltiples estrategias (media, moda, etc)</li>
-                        <li>Transformación logarítmica del target para normalizar distribución</li>
-                        <li>Feature engineering: creación de 59 nuevas variables derivadas</li>
-                        <li>One-Hot Encoding para variables categóricas</li>
-                        <li>Análisis de correlaciones y selección de features relevantes</li>
+                        <li>Limpieza y normalización de datos (valores duplicados, categorías semánticas)</li>
+                        <li>EDA completo con visualizaciones de variables vs. target</li>
+                        <li>Tratamiento de nulos con imputación por subgrupos e indicadores de missing</li>
+                        <li>Feature engineering: Frequency Encoding, One-Hot Encoding, selección por varianza</li>
+                        <li>Entrenamiento de 4 modelos: Decision Tree, Random Forest, XGBoost, LightGBM</li>
+                        <li>Búsqueda de hiperparámetros con RandomizedSearchCV</li>
+                        <li>Modelo seleccionado: LightGBM (mejor balance rendimiento/overfitting)</li>
                     </ul>
                 </div>
                 <div class="modal-section">
@@ -1036,9 +1039,11 @@
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">Pandas</span>
                         <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Matplotlib</span>
                         <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Matplotlib</span>
                         <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">LightGBM</span>
                         <span class="skill-tag">Jupyter Notebook</span>
                     </div>
                 </div>
