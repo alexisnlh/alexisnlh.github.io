@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,10 +19,23 @@
             --color-text-muted: #6b7280;
             --color-accent: #7c83a4;
             --color-accent-light: #9ba2bd;
-            --color-accent-strong: #6366f1;
+            --color-accent-strong: #0e7490;
             --color-border: #2e303a;
             --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-mono: 'Fira Code', monospace;
+        }
+
+        [data-theme="light"] {
+            --color-bg-primary: #ffffff;
+            --color-bg-secondary: #f8f9fa;
+            --color-bg-card: #f1f3f5;
+            --color-text-primary: #18181b;
+            --color-text-secondary: #52525b;
+            --color-text-muted: #71717a;
+            --color-accent: #0e7490;
+            --color-accent-light: #155e75;
+            --color-accent-strong: #0e7490;
+            --color-border: #e4e4e7;
         }
 
         * {
@@ -42,8 +55,7 @@
 
         /* Print Styles */
         @media print {
-            body {
-                background-color: #0a0a0b !important;
+            * {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
@@ -55,12 +67,23 @@
             .no-print {
                 display: none !important;
             }
-            .profile-name {
+        }
+        @media print {
+            html[data-theme="dark"] body { background-color: #0a0a0b !important; }
+            html[data-theme="dark"] .profile-name {
                 background: none !important;
                 -webkit-background-clip: unset !important;
                 -webkit-text-fill-color: #f0f0f2 !important;
                 background-clip: unset !important;
                 color: #f0f0f2 !important;
+            }
+            html[data-theme="light"] body { background-color: #ffffff !important; }
+            html[data-theme="light"] .profile-name {
+                background: none !important;
+                -webkit-background-clip: unset !important;
+                -webkit-text-fill-color: #18181b !important;
+                background-clip: unset !important;
+                color: #18181b !important;
             }
         }
 
@@ -200,9 +223,9 @@
         }
 
         .skill-tag.highlight {
-            background-color: rgba(99, 102, 241, 0.12);
-            color: #a5b4fc;
-            border-color: rgba(99, 102, 241, 0.3);
+            background-color: rgba(14, 116, 144, 0.12);
+            color: #0891b2;
+            border-color: rgba(14, 116, 144, 0.3);
         }
 
         /* Languages */
@@ -289,7 +312,7 @@
         .timeline-item.current {
             border-left: 2px solid var(--color-accent-strong);
             padding: 8px 12px;
-            background-color: rgba(99, 102, 241, 0.05);
+            background-color: rgba(14, 116, 144, 0.05);
             border-radius: 0 4px 4px 0;
             margin-left: -1px;
         }
@@ -301,7 +324,7 @@
             top: 6px;
             background-color: var(--color-accent-strong);
             border-color: var(--color-accent-strong);
-            box-shadow: 0 0 6px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 0 6px rgba(14, 116, 144, 0.4);
         }
 
         /* Trabajo anterior - más sutil */
@@ -345,9 +368,9 @@
         }
 
         .timeline-date.current {
-            background-color: rgba(99, 102, 241, 0.2);
-            color: #a5b4fc;
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            background-color: rgba(14, 116, 144, 0.2);
+            color: #0891b2;
+            border: 1px solid rgba(14, 116, 144, 0.3);
         }
 
         .timeline-description {
@@ -385,8 +408,9 @@
             font-family: var(--font-mono);
             font-size: 7px;
             padding: 2px 4px;
-            background-color: rgba(99, 102, 241, 0.1);
-            color: #a5b4fc;
+            background-color: transparent;
+            border: 1px solid rgba(14, 116, 144, 0.35);
+            color: #0891b2;
             border-radius: 2px;
         }
 
@@ -480,7 +504,7 @@
             bottom: 20px;
             right: 20px;
             padding: 12px 24px;
-            background-color: #6366f1;
+            background-color: #0e7490;
             color: white;
             border: none;
             border-radius: 8px;
@@ -491,12 +515,12 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+            box-shadow: 0 4px 15px rgba(14, 116, 144, 0.25);
             transition: all 0.2s;
         }
 
         .print-button:hover {
-            background-color: #818cf8;
+            background-color: #0891b2;
             transform: translateY(-2px);
         }
 
@@ -504,6 +528,38 @@
             width: 18px;
             height: 18px;
         }
+
+        /* Theme Toggle */
+        .theme-toggle-cv {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 38px;
+            height: 38px;
+            background-color: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            color: var(--color-text-secondary);
+        }
+
+        .theme-toggle-cv:hover {
+            color: var(--color-accent-strong);
+            border-color: var(--color-accent-strong);
+        }
+
+        .theme-toggle-cv svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .theme-icon { display: none; }
+        [data-theme="dark"] .theme-icon-sun { display: block; }
+        [data-theme="light"] .theme-icon-moon { display: block; }
 
         /* Back link */
         .back-link {
@@ -547,6 +603,24 @@
         Volver al Portfolio
     </a>
 
+    <!-- Theme Toggle -->
+    <button class="theme-toggle-cv no-print" id="themeToggleCV" aria-label="Cambiar tema claro/oscuro">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
     <!-- Print Button -->
     <button class="print-button no-print" id="printBtn" aria-label="Imprimir o guardar como PDF">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -559,6 +633,23 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Theme toggle
+            var themeToggleCV = document.getElementById('themeToggleCV');
+            var savedTheme = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+
+            if (themeToggleCV) {
+                themeToggleCV.addEventListener('click', function() {
+                    var current = document.documentElement.getAttribute('data-theme') || 'dark';
+                    var next = current === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', next);
+                    localStorage.setItem('theme', next);
+                });
+            }
+
+            // Print button
             var printBtn = document.getElementById('printBtn');
             if (printBtn) {
                 printBtn.addEventListener('click', function(e) {
