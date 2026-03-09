@@ -414,7 +414,8 @@
                     return;
                 }
                 e.preventDefault();
-                const projectId = `project-${index + 1}`;
+                const btn = card.querySelector('.project-details-btn');
+                const projectId = btn ? btn.getAttribute('data-project') : `project-${index + 1}`;
                 openModal(projectId);
             });
         });
