@@ -217,10 +217,10 @@
         if (!typingElement) return;
 
         const texts = [
-            'Data Analyst - Backend & Data',
+            'Backend Engineer + Data Engineer',
             'Backend Developer',
-            'Data Engineer',
-            'Especialista en Python & Django'
+            'Especialista en Python & Django',
+            'MLOps Engineer'
         ];
 
         let textIndex = 0;
