@@ -1311,6 +1311,17 @@ button {
     color: #2563eb;
 }
 
+.badge-ml {
+    background-color: rgba(14, 116, 144, 0.15);
+    color: #06b6d4;
+    border: 1px solid rgba(14, 116, 144, 0.3);
+}
+
+[data-theme="light"] .badge-ml {
+    background-color: rgba(14, 116, 144, 0.1);
+    color: #0e7490;
+}
+
 .project-title {
     font-size: 1.125rem;
     font-weight: 600;
