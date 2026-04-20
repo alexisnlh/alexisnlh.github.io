@@ -13,11 +13,5 @@ const savedTab = localStorage.getItem('cv-tab');
 if (savedTab) switchTab(savedTab);
 
 function printCV() {
-    const activeTab = localStorage.getItem('cv-tab') || 'web';
-    document.body.classList.add(`printing-${activeTab}`);
-
-    const restore = () => document.body.classList.remove('printing-web', 'printing-ats');
-    window.addEventListener('afterprint', restore, { once: true });
-
     window.print();
 }

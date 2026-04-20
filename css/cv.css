@@ -207,9 +207,6 @@ body { background: #eef0f7; color: #0d1120; font-family: 'DM Sans', sans-serif; 
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     body { background: #fff !important; margin: 0 !important; padding: 0 !important; }
     .topbar { display: none !important; }
-    .view { display: none !important; }
-    body.printing-web #view-web,
-    body.printing-ats #view-ats { display: block !important; }
     .cv-page {
         margin: 0 !important;
         box-shadow: none !important;
@@ -219,9 +216,12 @@ body { background: #eef0f7; color: #0d1120; font-family: 'DM Sans', sans-serif; 
         max-height: none !important;
         height: auto !important;
     }
-    .cv-web, .cv-ats {
+    .cv-web {
         height: auto !important;
-        min-height: unset !important;
+        overflow: visible !important;
+    }
+    .cv-ats {
+        height: auto !important;
         overflow: visible !important;
     }
     .cv-main, .cv-sidebar { overflow: visible !important; }
