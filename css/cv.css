@@ -202,29 +202,32 @@ body { background: #eef0f7; color: #0d1120; font-family: 'DM Sans', sans-serif; 
 .ats-edu-desc { font-size: 6.5pt; color: #555; margin-top: 0.3mm; }
 .ats-edu-yr { font-size: 7pt; color: #444; white-space: nowrap; }
 
+/* PRINT AREA (hidden on screen, only shown when printing) */
+#print-area { display: none; }
+
 /* PRINT */
 @media print {
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     body { background: #fff !important; margin: 0 !important; padding: 0 !important; }
-    .topbar { display: none !important; }
-    .cv-page {
+    .topbar, .view { display: none !important; }
+    #print-area {
+        display: block !important;
+    }
+    #print-area .cv-page {
         margin: 0 !important;
         box-shadow: none !important;
         border-radius: 0 !important;
         width: 210mm !important;
         overflow: visible !important;
-        max-height: none !important;
         height: auto !important;
     }
-    .cv-web {
-        height: auto !important;
-        overflow: visible !important;
-    }
-    .cv-ats {
+    #print-area .cv-web,
+    #print-area .cv-ats {
         height: auto !important;
         overflow: visible !important;
     }
-    .cv-main, .cv-sidebar { overflow: visible !important; }
+    #print-area .cv-main,
+    #print-area .cv-sidebar { overflow: visible !important; }
 }
 
 /* RESPONSIVE */
