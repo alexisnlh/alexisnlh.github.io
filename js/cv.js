@@ -8,9 +8,6 @@ function switchTab(tab) {
     localStorage.setItem('cv-tab', tab);
 }
 
-/* RESTORE LAST TAB */
-const savedTab = localStorage.getItem('cv-tab');
-if (savedTab) switchTab(savedTab);
 
 function printCV() {
     const activeTab = localStorage.getItem('cv-tab') || 'web';
