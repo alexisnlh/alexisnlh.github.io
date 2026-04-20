@@ -22,5 +22,5 @@ function printCV() {
     printArea.appendChild(cvPage.cloneNode(true));
 
     window.addEventListener('afterprint', () => { printArea.innerHTML = ''; }, { once: true });
-    window.print();
+    setTimeout(() => window.print(), 300);
 }
