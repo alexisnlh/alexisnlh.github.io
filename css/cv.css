@@ -205,7 +205,6 @@ body { background: #eef0f7; color: #0d1120; font-family: 'DM Sans', sans-serif; 
 /* PRINT */
 @media print {
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-    .topbar, .view { display: none !important; }
     body { background: #fff !important; margin: 0 !important; padding: 0 !important; }
     .cv-page { 
         margin: 0 !important;
@@ -215,7 +214,6 @@ body { background: #eef0f7; color: #0d1120; font-family: 'DM Sans', sans-serif; 
         overflow: visible !important;
         max-height: none !important;
     }
-    .view.active { display: block !important; }
     .cv-web, .cv-ats {
         height: auto !important;
         min-height: unset !important;
