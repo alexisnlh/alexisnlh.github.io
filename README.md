@@ -2,7 +2,7 @@
 
 > Backend Engineer + Data Engineer: Python, Django y automatización de procesos
 
-![Portfolio Preview](assets/images/og-image.svg)
+![Portfolio Preview](assets/images/og-image.png)
 
 ## 📋 Descripción
 
