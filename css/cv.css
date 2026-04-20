@@ -206,13 +206,18 @@ body { background: #eef0f7; color: #0d1120; font-family: 'DM Sans', sans-serif; 
 @media print {
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     body { background: #fff !important; margin: 0 !important; padding: 0 !important; }
-    .cv-page { 
+    .topbar { display: none !important; }
+    .view { display: none !important; }
+    body.printing-web #view-web,
+    body.printing-ats #view-ats { display: block !important; }
+    .cv-page {
         margin: 0 !important;
         box-shadow: none !important;
         border-radius: 0 !important;
         width: 210mm !important;
         overflow: visible !important;
         max-height: none !important;
+        height: auto !important;
     }
     .cv-web, .cv-ats {
         height: auto !important;
