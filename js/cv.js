@@ -11,3 +11,9 @@ function switchTab(tab) {
 /* RESTORE LAST TAB */
 const savedTab = localStorage.getItem('cv-tab');
 if (savedTab) switchTab(savedTab);
+
+function printCV() {
+    const activeTab = localStorage.getItem('cv-tab') || 'web';
+    window.print();
+    window.onafterprint = () => switchTab(activeTab);
+}
