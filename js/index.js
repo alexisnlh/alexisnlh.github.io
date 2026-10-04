@@ -14,7 +14,7 @@ applyTheme(currentTheme);
 toggleBtn.addEventListener('click', () => applyTheme(currentTheme === 'dark' ? 'light' : 'dark'));
 
 /* TYPED EFFECT */
-const roles = ['Backend Engineer', 'Data Engineer', 'Python Developer', 'ETL Architect'];
+const roles = ['Data Engineer', 'ETL Architect', 'Backend Engineer', 'Python Developer'];
 let ri = 0, ci = 0, del = false;
 const typedEl = document.getElementById('typed');
 
