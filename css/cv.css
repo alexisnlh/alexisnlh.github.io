@@ -109,14 +109,14 @@ body { background: #eef0f7; color: #0d1120; font-family: 'DM Sans', sans-serif; 
 
 /* MAIN */
 .cv-main {
-    padding: 7mm 6.5mm 6mm;
-    display: flex; flex-direction: column; gap: 4mm;
+    padding: 5mm 6mm 4mm;
+    display: flex; flex-direction: column; gap: 2.2mm;
 }
 
 .sec-title {
     font-family: 'Space Grotesk', sans-serif; font-size: 7.5pt; font-weight: 700;
     text-transform: uppercase; letter-spacing: 0.08em;
-    color: #0d1120; padding-bottom: 1mm; margin-bottom: 2.5mm;
+    color: #0d1120; padding-bottom: 0.7mm; margin-bottom: 1.8mm;
     border-bottom: 1.5px solid oklch(48% 0.17 205 / 0.4);
     display: flex; align-items: center; gap: 1.5mm;
 }
@@ -125,39 +125,39 @@ body { background: #eef0f7; color: #0d1120; font-family: 'DM Sans', sans-serif; 
     background: oklch(48% 0.17 205); border-radius: 2px; flex-shrink: 0;
 }
 
-.profile-p { font-size: 7.5pt; color: #4a5068; line-height: 1.65; }
+.profile-p { font-size: 7.5pt; color: #4a5068; line-height: 1.45; }
 .profile-p strong { color: #0d1120; }
 
 /* Experience */
-.exp-item { margin-bottom: 3.5mm; }
+.exp-item { margin-bottom: 2mm; }
 .exp-item:last-child { margin-bottom: 0; }
 .exp-row1 { display: flex; align-items: flex-start; justify-content: space-between; gap: 2mm; margin-bottom: 0.5mm; }
 .exp-role { font-family: 'Space Grotesk', sans-serif; font-size: 8.5pt; font-weight: 600; flex: 1; }
 .exp-period { font-family: 'JetBrains Mono', monospace; font-size: 6pt; color: #9099b0; white-space: nowrap; }
-.exp-company { font-size: 7pt; color: oklch(48% 0.17 205); margin-bottom: 1.5mm; }
-.exp-ul { list-style: none; display: flex; flex-direction: column; gap: 0.8mm; margin-bottom: 1.5mm; }
-.exp-ul li { font-size: 7pt; color: #4a5068; padding-left: 3mm; position: relative; line-height: 1.5; }
+.exp-company { font-size: 7pt; color: oklch(48% 0.17 205); margin-bottom: 1mm; }
+.exp-ul { list-style: none; display: flex; flex-direction: column; gap: 0.4mm; margin-bottom: 0.8mm; }
+.exp-ul li { font-size: 7pt; color: #4a5068; padding-left: 3mm; position: relative; line-height: 1.38; }
 .exp-ul li::before { content: '‣'; position: absolute; left: 0; color: oklch(48% 0.17 205); font-size: 7pt; }
-.tag-row { display: flex; flex-wrap: wrap; gap: 1mm; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 0.8mm; }
 
 /* Projects */
-.proj-item { margin-bottom: 3mm; }
+.proj-item { margin-bottom: 1.5mm; }
 .proj-item:last-child { margin-bottom: 0; }
-.proj-row1 { display: flex; flex-direction: column; gap: 0.5mm; margin-bottom: 0.8mm; }
+.proj-row1 { display: flex; flex-direction: column; gap: 0.3mm; margin-bottom: 0.6mm; }
 .proj-title { font-family: 'Space Grotesk', sans-serif; font-size: 7.5pt; font-weight: 600; display: block; }
 .proj-cat { font-family: 'JetBrains Mono', monospace; font-size: 5.5pt; color: #9099b0; }
-.proj-ul { list-style: none; display: flex; flex-direction: column; gap: 0.6mm; margin-bottom: 1mm; }
-.proj-ul li { font-size: 6.5pt; color: #4a5068; padding-left: 3mm; position: relative; line-height: 1.5; }
+.proj-ul { list-style: none; display: flex; flex-direction: column; gap: 0.4mm; margin-bottom: 0.8mm; }
+.proj-ul li { font-size: 6.5pt; color: #4a5068; padding-left: 3mm; position: relative; line-height: 1.38; }
 .proj-ul li::before { content: '‣'; position: absolute; left: 0; color: oklch(48% 0.17 205); font-size: 6.5pt; }
 .proj-link { font-family: 'JetBrains Mono', monospace; font-size: 6pt; color: oklch(48% 0.17 205); text-decoration: none; }
 .proj-link:hover { text-decoration: underline; }
 
 /* Education */
-.edu-item { display: flex; align-items: flex-start; justify-content: space-between; gap: 2mm; margin-bottom: 2.5mm; }
+.edu-item { display: flex; align-items: flex-start; justify-content: space-between; gap: 2mm; margin-bottom: 1.2mm; }
 .edu-item:last-child { margin-bottom: 0; }
 .edu-deg { font-family: 'Space Grotesk', sans-serif; font-size: 7.5pt; font-weight: 600; }
 .edu-sch { font-size: 7pt; color: oklch(48% 0.17 205); margin-top: 0.3mm; }
-.edu-desc { font-size: 6.5pt; color: #6b7080; margin-top: 0.5mm; line-height: 1.5; }
+.edu-desc { font-size: 6.5pt; color: #6b7080; margin-top: 0.3mm; line-height: 1.4; }
 .edu-yr { font-family: 'JetBrains Mono', monospace; font-size: 6pt; color: #9099b0; white-space: nowrap; flex-shrink: 0; margin-top: 0.5mm; }
 .status-badge {
     font-family: 'JetBrains Mono', monospace; font-size: 5.5pt;
@@ -168,35 +168,35 @@ body { background: #eef0f7; color: #0d1120; font-family: 'DM Sans', sans-serif; 
 
 /* ATS VIEW */
 .cv-ats {
-    padding: 9mm 11mm 8mm;
+    padding: 7mm 10mm 6mm;
     min-height: 297mm;
-    font-family: 'DM Sans', sans-serif; font-size: 7.5pt; color: #111; line-height: 1.55;
+    font-family: 'DM Sans', sans-serif; font-size: 7.5pt; color: #111; line-height: 1.45;
     display: flex; flex-direction: column; gap: 0;
 }
-.ats-hd { text-align: center; margin-bottom: 3.5mm; padding-bottom: 3mm; border-bottom: 1.5px solid #111; }
+.ats-hd { text-align: center; margin-bottom: 2.5mm; padding-bottom: 2.2mm; border-bottom: 1.5px solid #111; }
 .ats-name { font-family: 'Space Grotesk', sans-serif; font-size: 17pt; font-weight: 700; }
 .ats-role-line { font-size: 9pt; color: #333; margin: 1mm 0; }
 .ats-contacts { display: flex; flex-wrap: wrap; gap: 0.2rem 1.2rem; justify-content: center; font-size: 7.5pt; color: #333; }
 .ats-contacts a { color: #333; text-decoration: none; }
-.ats-sec { margin-bottom: 3mm; }
+.ats-sec { margin-bottom: 2.2mm; }
 .ats-sec-title {
     font-family: 'Space Grotesk', sans-serif; font-size: 8pt; font-weight: 700;
     text-transform: uppercase; letter-spacing: 0.07em;
-    border-bottom: 1.5px solid #111; padding-bottom: 0.8mm; margin-bottom: 2mm;
+    border-bottom: 1.5px solid #111; padding-bottom: 0.6mm; margin-bottom: 1.5mm;
 }
-.ats-p { font-size: 7.5pt; line-height: 1.6; color: #222; }
-.ats-exp { margin-bottom: 2.5mm; }
+.ats-p { font-size: 7.5pt; line-height: 1.45; color: #222; }
+.ats-exp { margin-bottom: 2mm; }
 .ats-exp-h { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 1mm; }
 .ats-exp-role { font-weight: 700; font-size: 8pt; }
 .ats-exp-period { font-size: 7pt; color: #444; }
 .ats-exp-co { font-size: 7pt; color: #444; font-style: italic; margin-bottom: 1mm; }
-.ats-ul { padding-left: 4mm; margin: 0 0 1.5mm 0; }
-.ats-ul li { font-size: 7pt; margin-bottom: 0.6mm; line-height: 1.5; }
-.ats-skills { display: flex; flex-direction: column; gap: 1.5mm; font-size: 7pt; }
-.ats-proj { margin-bottom: 2mm; }
+.ats-ul { padding-left: 4mm; margin: 0 0 1mm 0; }
+.ats-ul li { font-size: 7pt; margin-bottom: 0.4mm; line-height: 1.4; }
+.ats-skills { display: flex; flex-direction: column; gap: 1mm; font-size: 7pt; }
+.ats-proj { margin-bottom: 1.5mm; }
 .ats-proj-title { font-weight: 700; font-size: 7.5pt; }
 .ats-proj-meta { font-size: 6.5pt; color: #555; font-style: italic; margin-bottom: 0.8mm; }
-.ats-edu-row { display: flex; justify-content: space-between; align-items: baseline; gap: 2mm; flex-wrap: wrap; margin-bottom: 1.5mm; }
+.ats-edu-row { display: flex; justify-content: space-between; align-items: baseline; gap: 2mm; flex-wrap: wrap; margin-bottom: 1.2mm; }
 .ats-edu-deg { font-weight: 700; font-size: 7.5pt; }
 .ats-edu-sch { font-style: italic; font-size: 7pt; color: #444; }
 .ats-edu-desc { font-size: 6.5pt; color: #555; margin-top: 0.3mm; }
